@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Website</title>
+    <link rel="stylesheet" href="./assets/estilos.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <header class="header" id="navegation-menu">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo"><img src="images/logo.png" alt="logo"></a>
+
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#rooms" class="nav-link">Rooms</a></li>
+                    <li><a href="#restaurant" class="nav-link">Restaurant</a></li>
+                    <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener("click", mobileMenu);
+
+        function mobileMenu() {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        }
+
+        const navLink = document.querySelectorAll('.nav-link');
+        navLink.forEach((n) => n.addEventListener("click", closeMenu))
+
+        function closeMenu() {
+            hamburger.classList.remove("active");
+            navMenu.classList.remove("active");
+        }
+    </script>
+
+    <section class="home" id="home">
+        <div class="head_container">
+            <div class="box">
+                <div class="text">
+                    <h1>Hola</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere dignissimos quas eaque animi unde necessitatibus sint recusandae laborum magni dolore soluta numquam obcaecati minus, exercitationem earum modi consequatur dolores quos?</p>
+                    <button>Más Informacion</button>
+                </div>
+            </div>
+            <div class="image">
+                <img src="./assets/imagenes/home1.png" class="slide">
+            </div>
+            <div class="image_item">
+                <img src="./assets/imagenes/home1.png" alt="" class="slide active" onclick="img('./assets/imagenes/home1.png')">
+                <img src="./assets/imagenes/home2.png" alt="" class="slide" onclick="img('./assets/imagenes/home2.png')">
+                <img src="./assets/imagenes/home3.png" alt="" class="slide" onclick="img('./assets/imagenes/home3.png')">
+                <img src="./assets/imagenes/home4.png" alt="" class="slide" onclick="img('./assets/imagenes/home4.png')">
+            </div>
+        </div>
+    </section>
+    <script>
+        function img(anything) {
+            document.querySelector('.slide').src = anything;
+        }
+
+        function change(change) {
+            const line = document.querySelector('.image');
+            line.style.background = change;
+        }
+    </script>
+    <section class="book">
+        <div class="container flex">
+            <div class="input grid">
+                <div class="box">
+                    <label>Check-In</label>
+                    <input type="date" placeholder="Check-In-Date">
+                </div>
+                <div class="box">
+                    <label>Check-out</label>
+                    <input type="date" placeholder="Check-out-Date">
+                </div>
+                <div class="box">
+                    <label>Adultos</label>
+                    <input type="number" placeholder="0">
+                </div>
+                <div class="box">
+                    <label>Hijos</label>
+                    <input type="number" placeholder="0">
+                </div>
+                <div class="search">
+                    <input type="submit" value="BUSCAR">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about top" id="about">
+        <div class="container flex">
+            <div class="left">
+                <div class="img">
+                    <img src="./assets//imagenes/a1.png" alt="" class="image1">
+                    <img src="./assets/imagenes/a2.png" alt="" class="image2">
+                </div>
+            </div>
+            <div class="right">
+                <div class="heading">
+                    <h5>El mejor nivel de confort</h5>
+                    <h2>Bienvenido al resort</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus, at nesciunt. Dolorem voluptatem necessitatibus iusto placeat laborum culpa neque dignissimos porro. Eligendi consequatur cum aut laudantium officiis excepturi ducimus in!</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo delectus adipisci, nostrum magnam ipsam omnis eveniet ratione dolorum quas quisquam obcaecati doloribus cupiditate doloremque, beatae, quasi fugiat voluptatum. Non, quas.</p>
+                    <button class="btn1">Read More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="wrapper top">
+        <div class="container">
+            <div class="text">
+                 <h2>Amenidad</h2>
+                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem sed dolor molestiae, perferendis accusantium voluptas asperiores eveniet numquam qui? Facilis ex molestiae architecto itaque aliquid deleniti a fuga, accusantium asperiores.</p>
+
+                 <div class="content">
+                    <div class="box flex">
+                        <i class="fas fa-swimming-pool"></i>
+                        <span>Nadar</span>
+                    </div>
+                    <div class="box flex">
+                        <i class="fas fa-dumbbell"></i>
+                        <span>Gimnasio</span>
+                    </div>
+                    <div class="box flex">
+                        <i class="fas fa-spa"></i>
+                        <span>Spa</span>
+                    </div>
+                    <div class="box flex">
+                        <i class="fas fa-ship"></i>
+                        <span>Botes</span>
+                    </div>
+                    <div class="box flex">
+                        <i class="fas fa-swimmer"></i>
+                        <span>Surfeo</span>
+                    </div>
+                    <div class="box flex">
+                        <i class="fas fa-microphone"></i>
+                        <span>Conferencias</span>
+                    </div>
+                    <div class="box flex">
+                        <i class="fas fa-water"></i>
+                        <span>Buceo</span>
+                    </div>
+                    <div class="box flex">
+                        <i class="fas fa-umbrella-beach"></i>
+                        <span>Playa privada</span>
+                    </div>
+                 </div>
+            </div>
+        </div>
+    </section>
+   
+</body>
+</html>
